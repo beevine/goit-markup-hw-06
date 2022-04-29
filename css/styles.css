@@ -328,6 +328,12 @@ img {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     cursor: pointer;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-modal-button:hover,
+.close-modal-button:focus {
+    fill: var(--accent-color);
 }
 
 .modal-header {
@@ -352,9 +358,7 @@ img {
     margin-top: 10px;
     position: relative;
     display: flex;
-    flex-direction: column;
-
-    
+    flex-direction: column;   
 }
 
 .label-text {
@@ -445,6 +449,10 @@ img {
 }
 
 .checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin-right: 7px;
     width: 16px;
     height: 15px;
@@ -452,25 +460,23 @@ img {
     border: 2px solid var(--stress-text-color);
     border-radius: 2px;
 
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
-                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-} */
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} 
 
-.checkbox:cheked + .checked {
+.checkbox:checked ~ .checked {
     background-color: var(--accent-color);
-    border-color: var(--accent-color);
+    border-color: transparent;
 }
 
-.label-checkbox {
-    display: flex;
-    flex-direction: ;
+.checked-icon {
+    flex-shrink: 0;
 
-    font-size: 14px;
-    line-height: 1.71; 
-    letter-spacing: 0.03em;
+    fill: transparent;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.agreement-link {
+.policy-link {
     color: var(--accent-color);
     text-decoration: underline;
 }
